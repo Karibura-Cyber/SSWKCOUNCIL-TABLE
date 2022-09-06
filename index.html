@@ -1,0 +1,55 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SSWK Council</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+</head>
+<style>
+  @import 'https://fonts.googleapis.com/css?family=Kanit|Prompt';
+
+  body{
+      font-family: 'Kanit', sans-serif;
+  }
+
+  h1,h2,h3{
+      font-family: 'Prompt', sans-serif;
+  }
+  .header{
+        position:sticky;
+        top: 0 ;
+    }
+</style>
+<body>
+  <input class="form-control bg-dark text-light" id="Input" type="text" placeholder="Search">
+  <table class="table table-dark table-hover table-bordered border-light">
+    <thead>
+      <tr>
+        <th scope="col" class="header">ชื่อ</th>
+        <th scope="col" class="header">รหัสบัตรนักเรียน</th>
+        <th scope="col" class="header">ห้อง</th>
+        <th scope="col" class="header">วัน/เวลา</th>
+      </tr>
+    </thead>
+    <tbody id="Table"></tbody>
+  </table>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script type="text/javascript" src="script.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $("#Input").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#Table tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
+
+</body>
+</html>
