@@ -1,4 +1,4 @@
-$.getJSON('https://SSWKCOUNSIL-WORK.kariburacyber.repl.co/get', function (data) {
+$.getJSON('https://ddo.sswkcouncil.ml/get', function (data) {
       var person = data.person;
       for (var i = 0; i < person.length; i++) {
         var name = person[i].name
